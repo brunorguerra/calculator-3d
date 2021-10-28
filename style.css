@@ -1,0 +1,184 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 4rem 6rem;
+    color: var(--black);
+}
+/* header i {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    color: var(--black);
+} */
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size:  2.5rem;
+    color: var(--black)
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+}
+main .circle {
+    background: linear-gradient(60deg, rgba(52, 133, 255, .7), rgba(52, 133, 255, 1));
+    border-radius: 50%;
+}
+main .circle:nth-of-type(1) {
+    width: 400px;
+    height: 400px;
+
+    left: -170px;
+    position: fixed;
+    bottom: -170px;
+}
+main .circle:nth-of-type(2) {
+    width: 200px;
+    height: 200px;
+
+    position: fixed;
+    right: 10px;
+    top: 20px;
+}
+@keyframes leftAndRight {
+    0% {
+        right: 20px;
+    }
+    100% {
+        right: 150px;
+    }
+}
+main .circle:nth-of-type(3) {
+    width: 350px;
+    height: 350px;
+
+    position: fixed;
+    right: 20px;
+    bottom: -270px;
+
+    animation: leftAndRight 2s linear infinite alternate;
+}
+
+
+@keyframes topAndBottom {
+    0% {         
+        border-radius: 50%;
+        top: 100px;
+    }
+    100% {
+        border-radius: 10%;
+        top: 200px;
+    }
+}
+@keyframes bottomAndTop {
+    0% {         
+        border-radius: 50%;
+        top: 200px;
+    }
+    100% {
+        border-radius: 10%;
+        top: 100px;
+    }
+}
+
+main .circle:nth-of-type(4) {
+    width: 100px;
+    height: 100px;
+
+    position: fixed;
+    left: 280px;
+    top: 100px;
+
+    animation: topAndBottom 2s linear infinite alternate;
+}
+main .circle:nth-of-type(5) {
+    width: 100px;
+    height: 100px;
+
+    position: fixed;
+    left: 400px;
+    top:  200px;
+    animation: bottomAndTop 2s linear infinite alternate;
+}
+
+main .calculator {
+    background: rgba(255, 255, 255, .05);
+    z-index: 5;
+    border-radius: 5px;
+    border-left: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, .2);
+
+}
+main .calculator .content {
+    display: grid;
+}
+main .calculator .content .value {
+    grid-column: span 4;
+    height: 10rem;
+    width: 30rem;
+
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 1rem;
+
+    font-size: 3rem;
+
+    background: transparent;
+    color: var(--black);
+
+    border-radius: 0 5px 0 0;
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+main .calculator .content span {
+    width: auto;
+    height: 7rem;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 2rem;
+    color: var(--black);
+    user-select: none;
+
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+
+    transition: all .05s linear;
+
+    cursor: pointer;
+}
+main .calculator .content span:hover {
+    background: rgba(255, 255, 255, .05);
+}
+main .calculator .content span:active {
+    background: rgba(52, 133, 255, .7);
+    color: var(--white);
+}
+
+
+main .calculator .content .clear {
+    grid-column: span 2;
+}
+main .calculator .content .result {
+    grid-column: 4;
+    grid-row: span 2;
+    height: 14rem;
+}
+main .calculator .content .ponto {
+    grid-column: span 2;
+}
