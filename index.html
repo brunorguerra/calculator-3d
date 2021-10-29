@@ -24,28 +24,29 @@
 
         <div class="calculator">
             <form name="calc" class="content">
-                <input type="text" readonly class="value">
-                <span class="num clear" onclick="calc.txt.value = '' ">c</span>
-                <span class="num" onclick="document.calc.txt.value += '/'">/</span>
-                <span class="num" onclick="document.calc.txt.value += '-'">-</span>
-                <span class="num" onclick="document.calc.txt.value += '9'">9</span>
-                <span class="num" onclick="document.calc.txt.value += '8'">8</span>
-                <span class="num" onclick="document.calc.txt.value += '7'">7</span>
-                <span class="num" onclick="document.calc.txt.value += '+'">+</span>
-                <span class="num" onclick="document.calc.txt.value += '6'">6</span>
-                <span class="num" onclick="document.calc.txt.value += '5'">5</span>
-                <span class="num" onclick="document.calc.txt.value += '4'">4</span>
-                <span class="num" onclick="document.calc.txt.value += 'x'">x</span>
-                <span class="num" onclick="document.calc.txt.value += '3'">3</span>
-                <span class="num" onclick="document.calc.txt.value += '2'">2</span>
-                <span class="num" onclick="document.calc.txt.value += '1'">1</span>
-                <span class="num result" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
-                <span class="num ponto" onclick="document.calc.txt.value += '0'">0</span>
-                <span class="num" onclick="document.calc.txt.value += '.'">.</span>
+                <input type="text" readonly class="value" placeholder="0">
+                <span class="num clear" onclick="clean()">c</span>
+                <span class="num" onclick="insert('/')">/</span>
+                <span class="num" onclick="insert('-')">-</span>
+                <span class="num" onclick="insert('9')">9</span>
+                <span class="num" onclick="insert('8')">8</span>
+                <span class="num" onclick="insert('7')">7</span>
+                <span class="num" onclick="insert('+')">+</span>
+                <span class="num" onclick="insert('6')">6</span>
+                <span class="num" onclick="insert('5')">5</span>
+                <span class="num" onclick="insert('4')">4</span>
+                <span class="num" onclick="insert('*')">x</span>
+                <span class="num" onclick="insert('3')">3</span>
+                <span class="num" onclick="insert('2')">2</span>
+                <span class="num" onclick="insert('1')">1</span>
+                <span class="num result" onclick="result()">=</span>
+                <span class="num ponto" onclick="insert('0')">0</span>
+                <span class="num" onclick="insert('.')">.</span>
             </form>
         </div>
     </main>
 
+    <script src="./scripts.js"></script>
     <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelector(".calculator"), {

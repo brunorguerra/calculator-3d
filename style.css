@@ -139,6 +139,7 @@ main .calculator .content .value {
 
     background: transparent;
     color: var(--black);
+    overflow: hidden;
 
     border-radius: 0 5px 0 0;
     border-right: 1px solid rgba(0, 0, 0, .05);
